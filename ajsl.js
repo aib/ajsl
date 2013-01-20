@@ -21,3 +21,22 @@ ajsl['concat'] = function(arr) {
 ajsl['concatMap'] = function(arr, callback, thisArg) {
 	return ajsl.concat(arr.map(callback, thisArg));
 }
+
+/**
+ * Return an array of a range of numbers start ~ end, inclusive, with a step size (default 1)
+ */
+ajsl['range'] = function(start, end, stepSize) {
+	stepSize = stepSize || 1;
+	if (start > end) {
+		var inRange = function(n) { return n >= end; }
+		var step = -stepSize;
+	} else {
+		var inRange = function(n) { return n <= end; }
+		var step = stepSize;
+	}
+	var arr = [];
+	for (var n = start; inRange(n); n += step) {
+		arr.push(n);
+	}
+	return arr;
+}
