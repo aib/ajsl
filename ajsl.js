@@ -14,3 +14,10 @@ ajsl['concat'] = function(arr) {
 	arr.forEach(function(subArr) { subArr.forEach(function(e) { concatArr.push(e); }); });
 	return concatArr;
 };
+
+/**
+ * Convenience function combining ajsl.concat and Array.prototype.map
+ */
+ajsl['concatMap'] = function(arr, callback, thisArg) {
+	return ajsl.concat(arr.map(callback, thisArg));
+}
