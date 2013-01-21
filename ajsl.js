@@ -6,6 +6,28 @@ var ajsl = {};
 ajsl['TAU'] = 2 * Math.PI;
 
 /**
+ * Returns a function that calls the specified function property of an object
+ * Useful with map and foreach, e.g.:
+ * ["foo", "bar"].map(ajsl.propCall('toUpperCase')) = ["FOO", "BAR"]
+ */
+ajsl['propCall'] = function(propName) {
+	return function(obj) {
+		return obj[propName]();
+	}
+}
+
+/**
+ * Returns a function that gets the specified property of an object
+ * Useful with map, e.g.:
+ *   ["foo", "bar"].map(ajsl.propGet('length')) = [4, 4]
+ */
+ajsl['propGet'] = function(propName) {
+	return function(obj) {
+		return obj[propName];
+	}
+}
+
+/**
  * Concatenates an array of arrays in the Haskell sense, i.e.:
  * concat [[1], [2, 3], [4]] = [1, 2, 3, 4]
  */
