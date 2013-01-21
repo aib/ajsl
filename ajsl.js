@@ -9,10 +9,12 @@ ajsl['TAU'] = 2 * Math.PI;
  * Returns a function that calls the specified function property of an object
  * Useful with map and foreach, e.g.:
  * ["foo", "bar"].map(ajsl.propCall('toUpperCase')) = ["FOO", "BAR"]
+ * ["foo", "bar"].map(ajsl.propCall('substring', 1)) = ["oo", "ar"]
  */
 ajsl['propCall'] = function(propName) {
+	var args = Array.prototype.slice.call(arguments, 1);
 	return function(obj) {
-		return obj[propName]();
+		return Function.prototype.apply.call(obj[propName], obj, args);
 	}
 }
 
