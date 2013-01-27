@@ -77,3 +77,10 @@ ajsl['range'] = function() {
 		return ajsl.range_(arguments[0], arguments[1], arguments[2]);
 	}
 }
+
+/**
+ * Linear interpolation
+ */
+ajsl['lerp'] = function(a, b, t) {
+	return a + (b - a) * t;
+}
