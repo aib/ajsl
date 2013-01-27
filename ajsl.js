@@ -84,3 +84,11 @@ ajsl['range'] = function() {
 ajsl['lerp'] = function(a, b, t) {
 	return a + (b - a) * t;
 }
+
+ajsl['func'] = {};
+
+ajsl['func']['add'] = function(x, y) { return x + y; }
+ajsl['func']['sub'] = function(x, y) { return x - y; }
+ajsl['func']['mul'] = function(x, y) { return x * y; }
+ajsl['func']['div'] = function(x, y) { return x / y; }
+ajsl['func']['mod'] = function(x, y) { return x % y; }
