@@ -79,6 +79,13 @@ ajsl['range'] = function() {
 };
 
 /**
+ * Interpolate between two values given a weight function / ease curve
+ */
+ajsl['interp'] = function(w, a, b, t) {
+	return a + (b - a) * w(t);
+};
+
+/**
  * Linear interpolation
  */
 ajsl['lerp'] = function(a, b, t) {
