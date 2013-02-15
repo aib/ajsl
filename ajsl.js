@@ -15,8 +15,8 @@ ajsl['propCall'] = function(propName) {
 	var args = Array.prototype.slice.call(arguments, 1);
 	return function(obj) {
 		return Function.prototype.apply.call(obj[propName], obj, args);
-	}
-}
+	};
+};
 
 /**
  * Returns a function that gets the specified property of an object
@@ -26,8 +26,8 @@ ajsl['propCall'] = function(propName) {
 ajsl['propGet'] = function(propName) {
 	return function(obj) {
 		return obj[propName];
-	}
-}
+	};
+};
 
 /**
  * Concatenates an array of arrays in the Haskell sense, i.e.:
@@ -44,14 +44,14 @@ ajsl['concat'] = function(arr) {
  */
 ajsl['concatMap'] = function(arr, callback, thisArg) {
 	return ajsl.concat(arr.map(callback, thisArg));
-}
+};
 
 ajsl.range_ = function(start, end, stepSize) {
 	if (start > end) {
-		var inRange = function(n) { return n > end; }
+		var inRange = function(n) { return n > end; };
 		var step = -stepSize;
 	} else {
-		var inRange = function(n) { return n < end; }
+		var inRange = function(n) { return n < end; };
 		var step = stepSize;
 	}
 	var arr = [];
@@ -59,7 +59,7 @@ ajsl.range_ = function(start, end, stepSize) {
 		arr.push(n);
 	}
 	return arr;
-}
+};
 
 /**
  * Return an array of a half-open range [start,end) of numbers with a step size (default 1)
@@ -76,19 +76,19 @@ ajsl['range'] = function() {
 	} else { // (start, end, step)
 		return ajsl.range_(arguments[0], arguments[1], arguments[2]);
 	}
-}
+};
 
 /**
  * Linear interpolation
  */
 ajsl['lerp'] = function(a, b, t) {
 	return a + (b - a) * t;
-}
+};
 
 ajsl['func'] = {};
 
-ajsl['func']['add'] = function(x, y) { return x + y; }
-ajsl['func']['sub'] = function(x, y) { return x - y; }
-ajsl['func']['mul'] = function(x, y) { return x * y; }
-ajsl['func']['div'] = function(x, y) { return x / y; }
-ajsl['func']['mod'] = function(x, y) { return x % y; }
+ajsl['func']['add'] = function(x, y) { return x + y; };
+ajsl['func']['sub'] = function(x, y) { return x - y; };
+ajsl['func']['mul'] = function(x, y) { return x * y; };
+ajsl['func']['div'] = function(x, y) { return x / y; };
+ajsl['func']['mod'] = function(x, y) { return x % y; };
