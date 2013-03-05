@@ -46,6 +46,15 @@ ajsl['concatMap'] = function(arr, callback, thisArg) {
 	return ajsl.concat(arr.map(callback, thisArg));
 };
 
+ajsl['randInt'] = function(a, b) {
+	if (arguments.length == 1) {
+		b = a;
+		a = 0;
+	}
+
+	return a + Math.floor(Math.random() * (b - a));
+};
+
 ajsl.range_ = function(start, end, stepSize) {
 	if (start > end) {
 		var inRange = function(n) { return n > end; };
