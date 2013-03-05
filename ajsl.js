@@ -8,8 +8,8 @@ ajsl['TAU'] = 2 * Math.PI;
 /**
  * Returns a function that calls the specified function property of an object
  * Useful with map and foreach, e.g.:
- * ["foo", "bar"].map(ajsl.propCall('toUpperCase')) = ["FOO", "BAR"]
- * ["foo", "bar"].map(ajsl.propCall('substring', 1)) = ["oo", "ar"]
+ *   ["foo", "bar"].map(ajsl.propCall('toUpperCase')) = ["FOO", "BAR"]
+ *   ["foo", "bar"].map(ajsl.propCall('substring', 1)) = ["oo", "ar"]
  */
 ajsl['propCall'] = function(propName) {
 	var args = Array.prototype.slice.call(arguments, 1);
@@ -31,7 +31,7 @@ ajsl['propGet'] = function(propName) {
 
 /**
  * Concatenates an array of arrays in the Haskell sense, i.e.:
- * concat [[1], [2, 3], [4]] = [1, 2, 3, 4]
+ *   concat [[1], [2, 3], [4]] = [1, 2, 3, 4]
  */
 ajsl['concat'] = function(arr) {
 	var concatArr = [];
@@ -73,7 +73,7 @@ ajsl.range_ = function(start, end, stepSize) {
 /**
  * Return an array of a half-open range [start,end) of numbers with a step size (default 1)
  * start and step are optional:
- *   range(5)         = [1, 2, 3, 4]
+ *   range(5)         = [0, 1, 2, 3, 4]
  *   range(6, 2)      = [6, 5, 4, 3]
  *   range(5, 3, 0.5) = [5, 4.5, 4, 3.5]
  */
