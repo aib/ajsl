@@ -21,7 +21,7 @@ ajsl['propCall'] = function(propName) {
 /**
  * Returns a function that gets the specified property of an object
  * Useful with map, e.g.:
- *   ["foo", "bar"].map(ajsl.propGet('length')) = [4, 4]
+ *   ["foo", "bar"].map(ajsl.propGet('length')) = [3, 3]
  */
 ajsl['propGet'] = function(propName) {
 	return function(obj) {
