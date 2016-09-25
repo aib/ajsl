@@ -1,4 +1,9 @@
+/**
+ * aib's JavaScript library
+ */
 var ajsl = {};
+
+ajsl['VERSION'] = [0, 1];
 
 /**
  * The circle constant tau
