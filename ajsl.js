@@ -101,9 +101,13 @@ ajsl['lerp'] = function(a, b, t) {
 	return a + (b - a) * t;
 };
 
+/**
+ * Identity function
+ */
+ajsl['id'] = function(x) { return x; };
+
 ajsl['func'] = {};
 
-ajsl['func']['id'] = function(x) { return x; };
 ajsl['func']['add'] = function(x, y) { return x + y; };
 ajsl['func']['sub'] = function(x, y) { return x - y; };
 ajsl['func']['mul'] = function(x, y) { return x * y; };
