@@ -122,3 +122,8 @@ ajsl['func']['sub'] = function(x, y) { return x - y; };
 ajsl['func']['mul'] = function(x, y) { return x * y; };
 ajsl['func']['div'] = function(x, y) { return x / y; };
 ajsl['func']['mod'] = function(x, y) { return x % y; };
+
+// Add nodejs exports if needed
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = ajsl;
+}
