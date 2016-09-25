@@ -42,8 +42,8 @@ ajsl['concat'] = function(arr) {
 /**
  * Convenience function combining ajsl.concat and Array.prototype.map
  */
-ajsl['concatMap'] = function(arr, callback, thisArg) {
-	return ajsl.concat(arr.map(callback, thisArg));
+ajsl['concatMap'] = function(callback, arr) {
+	return ajsl.concat(arr.map(callback));
 };
 
 ajsl['randInt'] = function(a, b) {
