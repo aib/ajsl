@@ -106,6 +106,15 @@ ajsl['lerp'] = function(a, b, t) {
  */
 ajsl['id'] = function(x) { return x; };
 
+/**
+ * Constant function
+ */
+ajsl['const'] = function(x) {
+	return function() {
+		return x;
+	}
+};
+
 ajsl['func'] = {};
 
 ajsl['func']['add'] = function(x, y) { return x + y; };
